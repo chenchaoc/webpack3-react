@@ -3,9 +3,12 @@
 * @Date: 2017-12-30 13:47:07
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2017-12-30 14:13:53
+* @Last Modified time: 2018-01-04 11:55:51
 */
 import webpack from 'webpack';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
+import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
+import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
 
 export default [
     new webpack.LoaderOptionsPlugin({
@@ -13,9 +16,9 @@ export default [
       debug: false
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"',
-      __DEV__: false,
-      __PROD__: true
+        'process.env.NODE_ENV': '"production"',
+        __DEV__: false,
+        __PROD__: true
     }),
     new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),
@@ -41,7 +44,7 @@ export default [
         }
     }),
     new CleanWebpackPlugin(
-        ['zip','dist'],  //清空文件夹名称
+        ['uploadZip','dist'],  //清空文件夹名称
         {   root: process.cwd(),  //根目录
             verbose: false,  //是否在控制台输出
             dry: false,  //false直接删除文件  true模拟删除

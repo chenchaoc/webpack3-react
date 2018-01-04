@@ -3,21 +3,21 @@
 * @Date: 2017-12-28 16:38:03
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2017-12-30 14:34:21
+* @Last Modified time: 2018-01-02 17:26:21
 */
 import entry from './config/entry.js';
 import alias from './config/alias.js';
 import loaders from './config/loaders.js';
 import basePlugins from './config/basePlugins.js';
 import devPlugins from './config/devPlugins.js';
-import { argv } from 'yargs'; 
+
 
 export default {
     context: `${process.cwd()}/src`,
     entry,
     output: {
         path: `${process.cwd()}/dist`,
-        publicPath: '/',
+        publicPath: '',
         filename: '[name].js',
         chunkFilename: '[name][id].js'
     },

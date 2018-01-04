@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:48:44
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2017-12-30 13:56:30
+* @Last Modified time: 2018-01-04 11:55:02
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -11,17 +11,17 @@ import chalk from 'chalk';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackNotifierPlugin from 'webpack-build-notifier';
+import WebpackNotifierPlugin from 'webpack-notifier';  //打包完成提示
 
 export default [
     new ProgressBarPlugin({
-      format: `${chalk.bold('[:bar]')} ${chalk.cyan.bold(':percent (:elapseds)')} :msg`,
-      clear: true,
-      summary: false,
-      summaryContent: false,
-      customSummary (buildTime) {
-        process.stdout.write(`=====${chalk.green.bold(`[ built in ${buildTime} ]`)}=====`)
-      }
+        format: `${chalk.bold('[:bar]')} ${chalk.cyan.bold(':percent (:elapseds)')} :msg`,
+        clear: true,
+        summary: false,
+        summaryContent: false,
+        customSummary (buildTime) {
+          process.stdout.write(`=====${chalk.green.bold(`[ built in ${buildTime} ]`)}=====`)
+        }
     }),
     new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
         React: 'react',
@@ -45,13 +45,13 @@ export default [
         //xhtml: true  //如果为true,则以兼容xhtml的模式引用文件
     }),
     new WebpackNotifierPlugin({
-      title: '开发服务器',
-      successSound: 'Submarine',
-      failureSound: 'Glass',
-      suppressSuccess: true
+        title: '开发服务器',
+        successSound: 'Submarine',
+        failureSound: 'Glass',
+        suppressSuccess: true
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['commom','vendor'],
-      minChunks: Infinity // 不需要抽取公共代码到这个文件中
+        name: ['commom','vendor'],
+        minChunks: Infinity // 不需要抽取公共代码到这个文件中
     })                
 ]

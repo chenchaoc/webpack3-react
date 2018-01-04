@@ -3,7 +3,7 @@
 * @Date: 2017-12-28 16:42:48
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2017-12-30 00:26:31
+* @Last Modified time: 2018-01-02 17:07:03
 */
 export default {
     vendor: [
@@ -17,7 +17,8 @@ export default {
     common: [
         './global/module/cm.js',
         './global/module/utils.js',
-        './global/scss/reset.scss'
+        './global/scss/reset.scss',
+        './global/scss/base.scss'
     ],
     main: './app/main.js'
 }

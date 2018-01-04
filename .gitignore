@@ -1,2 +1,16 @@
+.DS_Store
+npm-debug.log
 node_modules/
-dist/
+
+.happypack
+.tmp
+.idea
+.settings
+.project
+.vscode
+*.log
+*.dat
+
+test
+dist
+zip
