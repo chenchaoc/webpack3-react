@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:47:07
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-04 11:55:51
+* @Last Modified time: 2018-01-11 16:41:45
 */
 import webpack from 'webpack';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
@@ -30,7 +30,7 @@ export default [
         beautify: false,
         // 删除所有的注释
         comments: false,
-        sourceMap: true,
+        sourceMap: false,
         compress: {
             // 在UglifyJs删除没有用到的代码时不输出警告  
             warnings: false,

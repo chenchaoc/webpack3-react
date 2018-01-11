@@ -3,34 +3,50 @@
 * @Date: 2018-01-02 16:37:55
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-02 17:08:01
+* @Last Modified time: 2018-01-09 16:30:06
 */
 import Square from './square.js';
 
 export default class extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        return true;
+    }
+    componentWillUpdate(nextProps, nextState) {
+        //console.log(nextProps);
+        //console.log(nextState);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        //console.log(prevProps);
+        //console.log(prevState);        
+    }
+    componentDidMount() {
+        //console.log(this.props)
+    }
     renderSquare(i){
-        return <Square value={i} />
+        return (
+            <Square
+                key={i}
+                value={this.props.squares[i]} 
+                onClick={() => this.props.onClick(i)} 
+                highlight={this.props.winnerLine.includes(i)}
+            />
+        )
     }
     render(){
-        const status = 'Next player: X';
+        let rows = [];
+        for(let i=0;i<3;i++){
+            let row = [];
+            for(let j=i*3;j<i*3+3;j++){
+                row.push(this.renderSquare(j));
+            }
+            rows.push(<div key={i} className="board-row clearfix">{row}</div>)
+        }
         return (
             <div>
-                <div className="status">{status}</div>
-                <div className="board-row clearfix">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row clearfix">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row clearfix">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>                                
+                {rows}
             </div>
         )
     }

@@ -3,7 +3,7 @@
 * @Date: 2018-01-02 14:51:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-04 14:35:48
+* @Last Modified time: 2018-01-11 20:07:18
 */
 
 export default {
@@ -11,8 +11,8 @@ export default {
     project: 'react-app',
     zipFilePath: `${process.cwd()}/uploadZip/react-app.zip`,
     ftp: {
-        host: '**********', //ip
-        user: '**********', //用户名
-        password: '*********' //密码
+        host: '', //ip
+        user: '', //用户名
+        password: '' //密码
     }
 }
