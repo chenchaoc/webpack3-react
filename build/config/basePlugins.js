@@ -3,12 +3,11 @@
 * @Date: 2017-12-30 13:48:44
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-04 11:55:02
+* @Last Modified time: 2018-01-12 16:34:07
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import chalk from 'chalk';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';  //打包完成提示
@@ -29,7 +28,6 @@ export default [
         utils: 'utils',
         cm: 'cm',
     }),
-    new ExtractTextPlugin("[name].css"), //提取出来的样式放在[name].css文件中*/
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
         title: 'react-main',
         filename: 'index.html',
@@ -39,7 +37,7 @@ export default [
         minify: false,  //是否压缩html文件
         //hash: false,   //给生成的 js 文件一个独特的 hash 值
         //cache: false,  //在内容变化时才生成一个新的文件
-        chunks: ['vendor','common','main'],  //指定引入哪些特定的文件
+        chunks: ['vendor','common','app'],  //指定引入哪些特定的文件
         chunksSortMode: 'manual' //chunks按照顺序插入，而不是乱的  values: 'none' | 'auto' | 'dependency' |'manual' | {function} - default: 'auto'
         //excludeChunks: ['main'],  //排除掉哪些文件
         //xhtml: true  //如果为true,则以兼容xhtml的模式引用文件
@@ -50,8 +48,9 @@ export default [
         failureSound: 'Glass',
         suppressSuccess: true
     }),
+    new webpack.HashedModuleIdsPlugin(), //没有变化的文件hash不会更改，配合下面的使用,千辛万苦找了几年~ ~
     new webpack.optimize.CommonsChunkPlugin({
-        name: ['commom','vendor'],
-        minChunks: Infinity // 不需要抽取公共代码到这个文件中
-    })                
+        names: ['common','vendor'],
+        minChunks: Infinity
+    })             
 ]

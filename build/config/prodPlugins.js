@@ -3,18 +3,21 @@
 * @Date: 2017-12-30 13:47:07
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-11 16:41:45
+* @Last Modified time: 2018-01-12 16:18:40
 */
 import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
+import ManifestPlugin from 'webpack-manifest-plugin'; //文件映射
 
 export default [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
     }),
+    new ExtractTextPlugin("[name]_[chunkhash:8].css"), //提取出来的样式放在[name].css文件中*/
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
         __DEV__: false,
@@ -43,6 +46,10 @@ export default [
             reduce_vars: true,
         }
     }),
+    new ManifestPlugin({
+        fileName: 'manifest.json',
+        basePath: `${process.cwd()}/dist/`
+    }),    
     new CleanWebpackPlugin(
         ['uploadZip','dist'],  //清空文件夹名称
         {   root: process.cwd(),  //根目录

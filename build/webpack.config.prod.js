@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:42:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-02 15:11:20
+* @Last Modified time: 2018-01-12 11:29:53
 */
 import entry from './config/entry.js';
 import alias from './config/alias.js';
@@ -18,7 +18,7 @@ export default {
     output: {
         path: `${process.cwd()}/dist`,
         publicPath: envConfig.publicPath,
-        filename: '[name].js',
+        filename: '[name]_[chunkhash:8].js',
         chunkFilename: '[name][id].js'
     },
     resolve: {

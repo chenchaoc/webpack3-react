@@ -3,19 +3,19 @@
 * @Date: 2017-12-28 22:34:35
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-04 14:36:02
+* @Last Modified time: 2018-01-12 17:37:50
 */
 
 import promptly from 'promptly'; //https://www.npmjs.com/package/promptly  命令行提示工具
 import Ftp from 'ftp'; //https://www.npmjs.com/package/ftp nodeJs ftp工具
 import chalk from 'chalk'; //命令行画笔改变颜色
-import uploadConfig from '../config/deployConfig.js';
+import deployConfig from '../config/deployConfig.js';
 
 function uploadFtp() {
     return new Promise((resolve,reject) => {
         try {
           const ftpClient = new Ftp()
-          const { catalog, project, zipFilePath, ftp } = uploadConfig
+          const { catalog, project, zipFilePath, ftp } = deployConfig
           ftpClient.on('ready', function () {
             ftpClient.list(`${catalog}/${project}`, function (err, list) {
               console.log(`远程站点目录/${project}最新5个：`)
