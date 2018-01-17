@@ -1,6 +1,6 @@
 npm install
 
-练习一下最新的webpack(3.10.0)+react(16.2.0)+react-router-dom(4.2.2)的最新配置
+练习一下webpack(3.10.0)+react(16.2.0)+react-router-dom(4.2.2)的最新配置
 
 npm run dev  开发热更新
 
