@@ -8,4 +8,4 @@ npm run test test环境连接发布系统,发布系统自动上传至阿里云�
 
 npm run beta beta环境连接发布系统,发布系统自动上传至阿里云服务
 
-npm run prod prod环境自动上传至ftp服务器
+npm run prod prod环境自动上传至ftp服务器运维进行发布
