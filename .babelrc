@@ -1,5 +1,6 @@
 {
     "presets": [
+        //https://github.com/babel/babel/tree/master/packages/babel-preset-env
         ["env", {
             "targets": {
               "browsers": ["last 2 versions"],
@@ -11,11 +12,7 @@
         "stage-0"
     ],
     "plugins": [
-        ["import",{
-            "libraryName": "antd",
-            "libraryDirectory": "es",
-            "style": "css"
-        }],
+        //https://segmentfault.com/q/1010000005596587?from=singlemessage&isappinstalled=1
         "transform-runtime"
     ]
 }

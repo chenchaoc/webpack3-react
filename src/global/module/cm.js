@@ -3,9 +3,11 @@
 * @Date: 2017-12-28 14:38:02
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-16 19:53:02
+* @Last Modified time: 2018-01-17 17:08:30
 */
 import axios from 'axios';
+import Loading from '@globalcomponent/loading/loading.js';
+import { Fragment } from 'react';
 
 /**
  * [公共ajax]
@@ -17,29 +19,40 @@ export function ajax(url,data={}){
     return axios.post(url,data).then(res => res.data)
 }
 /**
- * [代码分割,异步加载组件]
+ * [此函数为代码分割,importComponent为异步加载]
  * [asyncComponent description]
  * @param  {[function]} importComponent [description]
  * @param  {[object]} p                 [description]
  * @return {[component]}                [description]
+ * https://github.com/thejameskyle/react-loadable 这个是别人写的代码分割插件
  */
-export function asyncComponent(importComponent) {
+export function asyncComponent(importComponent,isLoad=true,delay=500) {
     class AsyncComponent extends React.Component {
         constructor(props){
             super(props)
             this.state = {
-                component: null
+                component: null,
+                isLoading: isLoad
             }            
         }
         async componentDidMount() {
             const {default: component} = await importComponent()
-            this.setState({
-                component
-            })
+            setTimeout(() => {
+                this.setState({
+                    isLoading: false,
+                    component
+                })
+            }, delay)
         }
         render(){
             const C = this.state.component;
-            return C ? <C {...this.props} /> : null
+            const { isLoading } = this.state;
+            return (
+                <Fragment>
+                    <Loading isLoading={isLoading} />
+                    { C ? <C {...this.props} /> : null }
+                </Fragment>
+            )
         }
     }
     return AsyncComponent

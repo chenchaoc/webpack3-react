@@ -3,7 +3,7 @@
 * @Date: 2017-12-28 16:42:48
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-15 11:38:42
+* @Last Modified time: 2018-01-17 17:28:04
 */
 export default {
     vendor: [
@@ -17,6 +17,7 @@ export default {
     common: [
         './global/module/cm.js',
         './global/module/utils.js',
+        './global/lib/polyfill.js',
         './global/scss/reset.scss',
         './global/scss/base.scss'
     ],

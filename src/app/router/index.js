@@ -3,7 +3,7 @@
 * @Date: 2018-01-15 11:38:25
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-16 20:51:25
+* @Last Modified time: 2018-01-17 16:47:26
 */
 import { BrowserRouter } from 'react-router-dom';
 import { Fragment } from 'react';
@@ -13,7 +13,6 @@ export default class extends React.Component{
         super(props)
     }
     componentDidMount() {
-        console.log(this.props)
     }
     render(){
         return (
