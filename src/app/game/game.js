@@ -3,7 +3,7 @@
 * @Date: 2018-01-02 16:38:06
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-09 17:17:22
+* @Last Modified time: 2018-01-15 11:42:20
 */
 import './game.scss';
 import Board from './board.js';
@@ -111,6 +111,7 @@ export default class extends React.Component {
                     <button onClick={() => this.sortClick()}>sort</button>
                     <ol>{moves}</ol>
                 </div>
+                {/*<Test />*/}
             </div>
         )
     }

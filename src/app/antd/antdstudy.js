@@ -3,7 +3,7 @@
 * @Date: 2018-01-08 15:54:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-12 16:42:33
+* @Last Modified time: 2018-01-12 18:51:10
 */
 import './antdstudy.scss';
 //import { DatePicker } from 'antd';
@@ -30,7 +30,6 @@ export default class extends React.Component {
                 <div>888</div>
                 <div>333</div>
                 <div>222</div>
-                <a href="//www.baidu.com">baidu</a>
             </div>
         )
     }

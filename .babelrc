@@ -16,5 +16,6 @@
             "libraryDirectory": "es",
             "style": "css"
         }],
+        "transform-runtime"
     ]
 }

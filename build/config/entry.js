@@ -3,12 +3,12 @@
 * @Date: 2017-12-28 16:42:48
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-12 15:37:51
+* @Last Modified time: 2018-01-15 11:38:42
 */
 export default {
     vendor: [
         'react',
-        //'react-router',
+        'react-router-dom',
         'prop-types',
         'react-redux',
         'redux',

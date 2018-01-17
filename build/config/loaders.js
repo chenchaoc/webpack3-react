@@ -3,7 +3,7 @@
 * @Date: 2017-12-28 16:54:58
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-11 19:08:49
+* @Last Modified time: 2018-01-15 10:45:04
 */
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
@@ -29,6 +29,9 @@ export default [
         }),
     }, {
         test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf)$/,
-        loader: 'file-loader?name=[name]_[sha512:hash:base64:7].[ext]'
+        loader: 'file-loader',
+        options:{
+            name: '[name]_[sha512:hash:base64:7].[ext]'
+        }
     }    
 ]
