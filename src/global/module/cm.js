@@ -3,7 +3,7 @@
 * @Date: 2017-12-28 14:38:02
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-17 17:08:30
+* @Last Modified time: 2018-01-18 11:33:40
 */
 import axios from 'axios';
 import Loading from '@globalcomponent/loading/loading.js';
@@ -19,7 +19,7 @@ export function ajax(url,data={}){
     return axios.post(url,data).then(res => res.data)
 }
 /**
- * [此函数为代码分割,importComponent为异步加载]
+ * [此函数为代码分割|按需加载,importComponent为异步加载]
  * [asyncComponent description]
  * @param  {[function]} importComponent [description]
  * @param  {[object]} p                 [description]
