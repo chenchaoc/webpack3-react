@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:48:44
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-12 16:34:07
+* @Last Modified time: 2018-01-18 17:42:43
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -29,9 +29,9 @@ export default [
         cm: 'cm',
     }),
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
-        title: 'react-main',
+        title: 'react-app',
         filename: 'index.html',
-        template: 'app/main.html',
+        template: 'app/index.html',
         inject: 'body',  //默认插入body底部 选项：true, body, head, false
         //favicon: '路径' title图标 
         minify: false,  //是否压缩html文件
