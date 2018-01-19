@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:47:07
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-15 10:40:02
+* @Last Modified time: 2018-01-19 19:32:43
 */
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -11,17 +11,19 @@ import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
 import ManifestPlugin from 'webpack-manifest-plugin'; //文件映射路径
+import { envName } from './env.js';
 
 export default [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
     }),
-    new ExtractTextPlugin("[name]_[chunkhash:8].css"), //提取出来的样式放在[name].css文件中*/
+    new ExtractTextPlugin("[name]_[chunkhash:8].css",{allChunks: true}), //提取出来的样式放在[name].css文件中*/
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
         __DEV__: false,
-        __PROD__: true
+        __PROD__: true,
+        gloablEnv: JSON.stringify(envName)
     }),
     new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),

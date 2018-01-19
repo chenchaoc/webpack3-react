@@ -3,7 +3,7 @@
 * @Date: 2018-01-18 16:44:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 19:09:24
+* @Last Modified time: 2018-01-19 23:01:32
 */
 import {Redirect} from 'react-router-dom';
 
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
             <div>
                 <h3>home页面</h3>
                 <div>
-                    <button onClick={() =>this.outLogin()}>退出登录</button>
+                    <button onClick={() => this.outLogin()}>退出登录</button>
                 </div>
             </div>
         );

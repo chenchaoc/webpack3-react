@@ -3,7 +3,7 @@
 * @Date: 2018-01-18 14:32:40
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 15:16:50
+* @Last Modified time: 2018-01-19 22:59:38
 */
 
 import { Fragment } from 'react';
@@ -20,7 +20,7 @@ export default class extends React.Component {
     render(){
         return (
             <Provider store={store}>
-                <BrowserRouter>
+                <BrowserRouter basename={ __DEV__ || gloablEnv == 'prod' ? '' : `/${gloablEnv}`}>
                     <App />
                 </BrowserRouter>
             </Provider>

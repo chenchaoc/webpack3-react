@@ -3,8 +3,9 @@
 * @Date: 2018-01-18 14:34:12
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 19:13:20
+* @Last Modified time: 2018-01-19 19:35:19
 */
+import './app.scss';
 import { Route, Link, Switch } from 'react-router-dom';
 import NavRedux from './components/nav/navRedux.js';
 const LoginRedux = cm.asyncComponent(() => import(/* webpackChunkName: "async-react-login" */ './components/login/loginRedux.js'));
@@ -14,7 +15,7 @@ const AboutRedux = cm.asyncComponent(() => import(/* webpackChunkName: "async-re
 import {connect} from 'react-redux';
 //import store from './store.js';
 
-export default class App extends React.Component {
+export default class extends React.Component {
     handleClick(){
         console.log(this.props)
     }
@@ -24,7 +25,7 @@ export default class App extends React.Component {
                 <div className="app-header">
                     <NavRedux />
                 </div>
-                <div className="app-main" style={{marginTop: '30px'}}>这是一级路由页面--------
+                <div className="app-main" style={{marginTop: '30px'}}>下面一级路由页面(/ 或者 home 或者 about)--------
                     <Switch>
                         <Route path="/" exact component={LoginRedux} />
                         <Route path="/home" exact component={HomeRedux} />

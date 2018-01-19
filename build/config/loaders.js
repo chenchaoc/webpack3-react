@@ -3,7 +3,7 @@
 * @Date: 2017-12-28 16:54:58
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-15 10:45:04
+* @Last Modified time: 2018-01-19 14:18:52
 */
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
@@ -19,13 +19,13 @@ export default [
         test: /\.css$/,
         use: ExtractTextPlugin.extract({ 
             fallback: 'style-loader',
-            use: ['css-loader?sourceMap','postcss-loader?sourceMap']
+            use: ['css-loader','postcss-loader']
         })
     }, {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({ 
             fallback: 'style-loader',
-            use: ['css-loader?sourceMap','postcss-loader?sourceMap','sass-loader?sourceMap']
+            use: ['css-loader','postcss-loader','sass-loader']
         }),
     }, {
         test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf)$/,

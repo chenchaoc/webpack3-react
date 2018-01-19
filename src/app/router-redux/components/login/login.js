@@ -3,8 +3,10 @@
 * @Date: 2018-01-18 14:44:51
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 17:09:06
+* @Last Modified time: 2018-01-19 18:25:21
 */
+import './login.scss'; //根匹配路径必须Import一个css 否则js一直报错？？
+
 export default class extends React.Component {
     goLogin(){
         this.props.GOLOGIN(this.refs.username.value,this.refs.password.value,this.props.history);
@@ -16,7 +18,7 @@ export default class extends React.Component {
     render() {
         return (
             <div>
-                <h3>登录页面</h3>
+                <h3>我是登录页面</h3>
                 <div>
                     用户名<input type="text" ref="username" />
                 </div>
@@ -24,7 +26,7 @@ export default class extends React.Component {
                     密码<input type="password" ref="password" />
                 </div>
                 <div>
-                    <button onClick={() => this.goLogin()}>登录</button>
+                    <button onClick={() => this.goLogin()}>点击登录</button>
                 </div>
             </div>
         );
