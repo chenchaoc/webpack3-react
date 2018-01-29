@@ -3,7 +3,7 @@
 * @Date: 2018-01-16 11:03:06
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 11:22:21
+* @Last Modified time: 2018-01-22 11:22:33
 */
 import { Switch, Route, Link, Redirect, Prompt } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ export default class extends React.Component {
     }
     render(){
         return (
-            <div>
+            <div className="product">
                 <div onClick={() => this.handleClick()}>跳转至useradd</div>
                 { this.props.match.params.productId ? <span>productId-------{this.props.match.params.productId}</span> : null}
             </div>

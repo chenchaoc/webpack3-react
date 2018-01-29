@@ -1,9 +1,9 @@
 /*
 * @Author: chenchao
-* @Date: 2018-01-15 14:58:46
+* @Date: 2018-01-22 11:27:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-22 11:23:15
+* @Last Modified time: 2018-01-22 11:28:09
 */
 import { Fragment } from 'react';
 
@@ -17,7 +17,7 @@ export default class extends React.Component {
     render(){
         return (
             <Fragment>
-                <div className="about">about</div>
+                <div className="n404">404NotFound</div>
             </Fragment>
         )
     }
