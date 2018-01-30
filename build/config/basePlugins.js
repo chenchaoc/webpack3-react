@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:48:44
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 17:42:43
+* @Last Modified time: 2018-01-30 10:34:30
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -11,6 +11,9 @@ import chalk from 'chalk';
 import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';  //打包完成提示
+//如果直接后端配置了路径,此时需要CopyWebpackPlugin||举个栗子：域名/img/xxx.jpg  此时就需要将img移至dist目录下，最终放在web服务器根目录下
+//import CopyWebpackPlugin from 'copy-webpack-plugin';  //复制目录或者文件至打包后的dist 
+//import ImageminPlugin from 'imagemin-webpack-plugin';  //图片压缩插件,好像会损害图片质量?建议使用在线压缩 https://tinypng.com/
 
 export default [
     new ProgressBarPlugin({
@@ -25,8 +28,9 @@ export default [
     new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
         React: 'react',
         ReactDOM: 'react-dom',
-        utils: 'utils',
+        util: 'util',
         cm: 'cm',
+        wechat: 'wechat'
     }),
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
         title: 'react-app',

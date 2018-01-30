@@ -3,7 +3,7 @@
 * @Date: 2018-01-12 17:14:47
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-12 17:31:23
+* @Last Modified time: 2018-01-29 16:12:26
 */
 /**
  * 发布上传配置
@@ -19,11 +19,11 @@ export default {
   },
   serverEnv: {
     test: {
-      serverUrl: 'xxx', //ip
+      serverUrl: 'xxx', //服务端地址
       projectId: '0' //项目编号
     },
     beta: {
-      serverUrl: 'xxx', //ip
+      serverUrl: 'xxx', //服务端地址
       projectId: '1' //项目编号
     }
   },

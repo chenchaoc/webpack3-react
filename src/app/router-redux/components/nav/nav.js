@@ -3,7 +3,7 @@
 * @Date: 2018-01-18 14:48:05
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-18 19:14:21
+* @Last Modified time: 2018-01-29 11:07:15
 */
 import { Route, Link, Switch } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ export default class extends React.Component {
     }
     render(){
         return (
-            <ul style={{display:this.props.isLogin?"block":"none"}}>这是nav导航页面-------
+            <ul style={{display:this.props.isLogin?"block":"none"}}>这是只有登录才看得到的nav导航页面-------
                 <li style={{display:this.props.isLogin?"none":"block"}}>
                     <Link to="/">登录</Link>
                 </li>
