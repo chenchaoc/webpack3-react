@@ -3,13 +3,13 @@
 * @Date: 2018-01-18 14:48:05
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-29 11:07:15
+* @Last Modified time: 2018-03-29 17:39:57
 */
 import { Route, Link, Switch } from 'react-router-dom';
 
 export default class extends React.Component {
     componentDidMount() {
-        console.log(this.props)
+        //console.log(this.props)
     }
     render(){
         return (

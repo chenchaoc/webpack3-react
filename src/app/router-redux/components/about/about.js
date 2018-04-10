@@ -3,7 +3,7 @@
 * @Date: 2018-01-18 18:35:58
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-19 17:27:20
+* @Last Modified time: 2018-01-31 17:27:28
 */
 
 import {Redirect,Switch,Link,Route} from 'react-router-dom';
@@ -28,13 +28,13 @@ export default class extends React.Component {
             <div>
                 <h3>我是about页面</h3>
                 <ul>
-                    <li><Link to="/about/phone">点击进入联系电话(about/phone)</Link></li>
-                    <li><Link to="/about/content">点击进入公司介绍(about/content)</Link></li>
+                    <li><Link to={`${this.props.match.url}/phone`}>点击进入联系电话(about/phone)</Link></li>
+                    <li><Link to={`${this.props.match.url}/content`}>点击进入公司介绍(about/content)</Link></li>
                 </ul>
-                <div style={{marginTop: '30px'}}>下面是二级路由页面(about)-------
+                <div style={{marginTop: '30px'}}>下面是二级路由页面(about/...)-------
                     <Switch>
-                        <Route path="/about/phone" component={Phone} />
-                        <Route path="/about/content" component={Content} />
+                        <Route path="/about/:id" component={Phone} />
+                        {/*<Route path="/about/content" component={Content} />*/}
                     </Switch>
                 </div>
             </div>

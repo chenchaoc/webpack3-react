@@ -3,17 +3,17 @@
 * @Date: 2017-12-28 22:32:24
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2017-12-30 14:22:04
+* @Last Modified time: 2018-03-16 14:46:44
 */
 
 import express from 'express'; //nodejs 框架
 import ip from 'ip'; //ip地址
 import chalk from 'chalk'; //变色
 import webpack from 'webpack'; //webpack
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import connectHistoryApiFallback from 'connect-history-api-fallback';
-import httpProxyMiddleware from 'http-proxy-middleware';
+import webpackDevMiddleware from 'webpack-dev-middleware';  //nodejs服务中间件
+import webpackHotMiddleware from 'webpack-hot-middleware'; //热刷新
+import connectHistoryApiFallback from 'connect-history-api-fallback'; //热刷新
+import httpProxyMiddleware from 'http-proxy-middleware'; //http代理中间件
 
 import proxyConfig from '../config/proxyConfig.js';
 import webpackConfig from '../webpack.config.dev.js';

@@ -3,13 +3,13 @@
 * @Date: 2018-01-18 14:33:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-26 10:24:08
+* @Last Modified time: 2018-01-31 16:09:47
 */
 
 import { combineReducers } from 'redux';
 import { GO_LOGIN, OUT_LOGIN, SORT_REVERSE, GET_LIST } from './actions.js';
 
-function isLogin(state= false, action){
+function isLogin(state = false, action){
     switch (action.type){
         case GO_LOGIN:
             return true
@@ -39,7 +39,7 @@ function newsList(state = [
     }
 }
 
-function pageInfo(state={
+function pageInfo(state = {
     list: [
         {id:1,text:"111111"},
         {id:2,text:"222222"},

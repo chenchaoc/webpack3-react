@@ -3,7 +3,7 @@
 * @Date: 2018-01-02 16:38:06
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-15 11:42:20
+* @Last Modified time: 2018-03-20 16:10:06
 */
 import './game.scss';
 import Board from './board.js';
@@ -91,7 +91,7 @@ export default class extends React.Component {
             const desc = step.lastStep;
             return (
                 <li key={move}>
-                    <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+                    <a href="javascript:void(0)" onClick={() => this.jumpTo(move)}>{desc}</a>
                 </li>
             )
         })

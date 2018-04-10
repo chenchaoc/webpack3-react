@@ -3,17 +3,12 @@
 * @Date: 2018-01-02 17:41:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-15 10:48:23
+* @Last Modified time: 2018-03-20 15:50:00
 */
 
 import './test.scss';
 const src2 = require('./a.jpg'); //同步加载图片
 import src3 from './a.jpg'; //异步
-console.log('src3------',src3)
-console.log(111)
-console.log('src2------',src2)
-console.log(222)
-
 
 export default class extends React.Component {
     render(){

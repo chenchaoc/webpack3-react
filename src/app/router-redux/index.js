@@ -3,7 +3,7 @@
 * @Date: 2018-01-18 14:32:40
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-19 22:59:38
+* @Last Modified time: 2018-03-29 17:40:22
 */
 
 import { Fragment } from 'react';
@@ -16,6 +16,8 @@ import App from './app.js';
 export default class extends React.Component {
     constructor(props){
         super(props)
+    }
+    componentDidMount() {
     }
     render(){
         return (
