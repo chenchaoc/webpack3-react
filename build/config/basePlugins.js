@@ -3,7 +3,7 @@
 * @Date: 2017-12-30 13:48:44
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-01-30 10:34:30
+* @Last Modified time: 2018-09-12 09:58:12
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';

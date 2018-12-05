@@ -3,7 +3,7 @@
 * @Date: 2018-02-09 10:56:41
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-02-09 11:33:44
+* @Last Modified time: 2018-08-15 17:16:23
 */
 
 import PropTypes from 'prop-types';
@@ -33,7 +33,7 @@ function coverResize(height, width, parentH, parentW) {
 
 export default class extends React.Component {
   static propTypes = {
-    src: PropTypes.string, // 真实路径
+    src: PropTypes.string.isRequired, // 真实路径
     placeHolder: PropTypes.string, // 占位图路径
     fitModel: PropTypes.oneOf(["cover"]) // 填充模式
   };

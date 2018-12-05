@@ -3,7 +3,7 @@
 * @Date: 2018-01-29 16:24:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-03-20 14:51:26
+* @Last Modified time: 2018-09-11 17:23:15
 */
 import wx from 'weixin-js-sdk';
 
@@ -76,11 +76,11 @@ function initSignature(jsApiList = ['onMenuShareTimeline', 'onMenuShareAppMessag
 export function share(option = {}) {
     initSignature().then(() => {
         wx.ready(() => {
-            const config = Object.assign({
+            const config = Object.assign({}, {
                 type: 'link', //不填默认为link 如果是分享到朋友圈(可为music、video、link)
                 title: '快来围观啦', //分享标题
-                link: 'http://www.chenchaoc.top', //分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致  公众号设置-->功能设置-->js接口安全域名
-                imgUrl: 'http://www.chenchaoc.top/cc.jpeg', //分享图标
+                link: 'https://www.chenchaoc.top', //分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致  公众号设置-->功能设置-->js接口安全域名
+                imgUrl: 'https://www.chenchaoc.top/cc.jpeg', //分享图标
                 dataUrl: '', //默认为空,朋友圈分享(如果type是music或video,则要提供数据链接)
                 desc: 'cc个人网站', //分享描述
                 success: () => {}, //用户确认分享后执行的回调函数
